@@ -23,7 +23,7 @@ data class Post(
     val likes: Likes = Likes(),
     val views: Views = Views(),
     val postType: String = "post",
-    val attachments: Attachment,
+    val attachments: Array<Attachment> = emptyArray<Attachment>().plusElement(PhotoAttachment()),
     val canPin: Boolean = true,
     val isPinned: Boolean = true
 ) /*{
