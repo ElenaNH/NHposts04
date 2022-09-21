@@ -37,11 +37,12 @@ data class Post(
             |---
             |${text}
             |---
-            |likes=${likes}, views=${views}
+            |likes=${likes}, views=${views}, attachments=${attachments}
             |---------------------------------
             |""".trimMargin()
     }
-}*/
+}
+*/
 
 object WallService {
     private var posts = emptyArray<Post>()
@@ -80,25 +81,25 @@ object WallService {
         nextPostId = 0
     }
 
-    /*
+/*
 
-        // Жалко было удалять код из лекции, так что чуточку его подправила
-        fun likeById(id: Int) {
-            for ((index, post) in posts.withIndex()) {
-                if (post.id == id) {
-                    posts[index] = post.copy(likes = post.likes.copy(post.likes.count + 1))
-                }
+    // Жалко было удалять код из лекции, так что чуточку его подправила
+    fun likeById(id: Int) {
+        for ((index, post) in posts.withIndex()) {
+            if (post.id == id) {
+                posts[index] = post.copy(likes = post.likes.copy(post.likes.count + 1))
             }
         }
+    }
+*/
 
-        override fun toString(): String {
-            var wallDisplay = ""
-            for (post in posts) {
-                wallDisplay += post.toString()
-            }
-
-            return wallDisplay
+    override fun toString(): String {
+        var wallDisplay = ""
+        for (post in posts) {
+            wallDisplay += post.toString()
         }
-    */
+
+        return wallDisplay
+    }
 
 }

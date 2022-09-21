@@ -15,7 +15,12 @@ class WallServiceTest {
         val myPost = Post(
             ownerId = 1,
             fromId = 1,
-            attachments = emptyArray<Attachment>().plusElement(PhotoAttachment()).plusElement(VideoAttachment())
+            attachments = emptyArray<Attachment>()
+                .plusElement(PhotoAttachment())
+                .plusElement(VideoAttachment())
+                .plusElement(AudioAttachment())
+                .plusElement(DocAttachment())
+                .plusElement(LinkAttachment())
         )
         val postId = WallService.add(myPost).id
         val result1 = WallService.update(myPost.copy(id = postId, text = "First updating"))
